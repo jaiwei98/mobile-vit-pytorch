@@ -34,7 +34,7 @@ print(flop_count_table(flop_analyzer))
 
 ## MobileViT
 
-<img src="./asset/mobilevit.png" width="300px"></img>
+<img src="./asset/mobilevit.png" ></img>
 
 The first paper <a href="https://arxiv.org/abs/2110.02178">MobileViT: Light-weight, Genaral-purpose,and Mobile-friendly Vison Transformer</a> proposed to combine the strength or CNNs and ViTs to build a light-weight and low latency network for mobile vision task.
 
@@ -56,7 +56,7 @@ out = v(x) # (1, 1000)
 
 ## MobileVitv2
 
-<img src="./asset/mobilevitv2.png" width="300px"></img>
+<img src="./asset/mobilevitv2.png"></img>
 
 This paper <a href="https://arxiv.org/abs/2206.02680">Separable Self-attention for Mobile Vision Transformers</a> replaced the *multi-headed self-attention* with a *separable self-attention* with linear complexity and removed skip-connection and fusion in the MobileVit block as they imporve the performance marginally.
 

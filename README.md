@@ -51,7 +51,7 @@ model = MobileViT(
     patch_size=(2, 2)
 )
 x = torch.randn(5, 3, 224, 224)
-out = v(x) # (1, 1000)
+out = model(x) # (1, 1000)
 ```
 
 ## MobileVitv2
@@ -73,7 +73,7 @@ model = MobileViTv2(
     patch_size=(2, 2)
 )
 x = torch.randn(5, 3, 224, 224)
-out = v(x) # (1, 1000)
+out = model(x) # (1, 1000)
 ```
 
 ## TODO

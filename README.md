@@ -64,9 +64,9 @@ Sample to import `MobileViTv2`
 
 ```python
 import torch
-from mobile_vit.mobilevit import MobileViT
+from mobile_vit.mobilevit import MobileViTv2
 
-model = MobileViT(
+model = MobileViTv2(
     image_size = (224,224), 
     width_multiplier = 2,             # support [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2] as shown in paper
     num_classes=1000, 

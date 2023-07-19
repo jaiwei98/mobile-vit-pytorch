@@ -8,6 +8,7 @@ This repository provide minimal Pytorch reimplementation of Vision Transformer M
 - [Check Params and Flops](#how-to-check-models-params--flops)
 - [MobileViT](#MobileViT)
 - [MobileViTv2](#mobilevitv2)
+- [MobileViTv3](#mobilevitv3)
 
 
 ## How to check model's Params & Flops
@@ -112,7 +113,6 @@ out = model(x) # (5, 1000)
 
 
 ## TODO
-- [ ] MobileViTv3
 - [ ] MobileViTs Detection
 - [ ] MobileViTs Segmentation
 - [ ] MobileSAM
@@ -142,6 +142,14 @@ Some function and code are adapted from official repo <a href="https://github.co
       author={Sachin Mehta and Mohammad Rastegari},
       year={2022},
       eprint={2206.02680},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+@misc{wadekar2022mobilevitv3,
+      title={MobileViTv3: Mobile-Friendly Vision Transformer with Simple and Effective Fusion of Local, Global and Input Features}, 
+      author={Shakti N. Wadekar and Abhishek Chaurasia},
+      year={2022},
+      eprint={2209.15159},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }

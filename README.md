@@ -12,7 +12,7 @@ This repository provide minimal Pytorch reimplementation of Vision Transformer M
 
 ## How to check model's Params & Flops
 
-I'm using this <a href="https://github.com/facebookresearch/fvcore">library</a> to check the model's params and flops. Feel free to use others :D
+I'm using this <a href="https://github.com/facebookresearch/fvcore">fvcore library</a> to check the model's params and flops. Feel free to use others :D
 
 ```python
 import torch
@@ -51,7 +51,7 @@ model = MobileViT(
     patch_size=(2, 2)
 )
 x = torch.randn(5, 3, 224, 224)
-out = model(x) # (1, 1000)
+out = model(x) # (5, 1000)
 ```
 
 ## MobileVitv2
@@ -73,8 +73,43 @@ model = MobileViTv2(
     patch_size=(2, 2)
 )
 x = torch.randn(5, 3, 224, 224)
-out = model(x) # (1, 1000)
+out = model(x) # (5, 1000)
 ```
+
+## MobileViTv3
+
+<img src="./asset/mobilevitv3.png"></img>
+
+This paper <a href="https://arxiv.org/abs/2209.15159">MobileViTv3: Mobile-Friendly Vision Transformer with Simple and Effective Fusion of Local, Global and Input Features</a> proposed to change the fusion block in the MobileViT and MobileViTv2 Blocks respectively by replacing 3x3 convolutional layer with 1x1 convolutional layer and fusing the output features from *local representation block* as the residual connections.
+
+Sample to import `MobileViTv3_v1` and `MobileViTv3_v2`
+
+```python
+import torch
+from mobile_vit.mobilevit_v3_v1 import MobileViTv3_v1
+from mobile_vit.mobilevit_v3_v2 import MobileViTv3_v2
+
+# MobileViTv3_v1 from (a)
+model = MobileViTv3_v1(
+    image_size = (224,224), 
+    mode = 'small',             # support ["xx_small", "x_small", "small"] as shown in paper
+    num_classes=1000, 
+    patch_size=(2, 2)
+)
+x = torch.randn(5, 3, 224, 224)
+out = model(x) # (5, 1000)
+
+# MobileViTv3_v2 from (b)
+model = MobileViTv3_v2(
+    image_size = (224,224), 
+    width_multiplier = 1,       # support [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2] as shown in paper
+    num_classes=1000, 
+    patch_size=(2, 2)
+)
+x = torch.randn(5, 3, 224, 224)
+out = model(x) # (5, 1000)
+```
+
 
 ## TODO
 - [ ] MobileViTv3
